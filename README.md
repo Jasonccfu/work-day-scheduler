@@ -18,6 +18,6 @@ N/A
 
 ## License
 
-Please refer to the LICENSE in the repo.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
