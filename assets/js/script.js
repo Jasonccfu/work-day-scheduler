@@ -32,6 +32,35 @@ $(".saveBtn").on("click", function () {
   localStorage.setItem(time, text);
 });
 
+function colorTask() {
+  // get current hour
+  var currentHour = dayjs().format("HH");
+
+  // loop over each time-block
+  $(".time-block").each(function () {
+    var timeId = parseInt($(this).attr("id").split("hour-")[1]);
+    console.log(timeId);
+    console.log(currentHour);
+
+    //less than current time add "past"
+    if (timeId < currentHour) {
+      $(this).addClass("past");
+    } //equal to current time add "present"
+    else if (timeId == currentHour) {
+      $(this).removeClass("past");
+      $(this).removeClass("future");
+      $(this).addClass("present");
+    } //greater than current time add "future"
+    else {
+      $(this).removeClass("past");
+      $(this).removeClass("present");
+      $(this).addClass("future");
+    }
+  });
+}
+
+colorTask();
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
